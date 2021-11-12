@@ -8,7 +8,8 @@ const web3 = createAlchemyWeb3(API_URL)
 
 
 const contract = require("../artifacts/contracts/CreateNFT.sol/MyToken.json");
-const contractAddress = "0x5E4d573F5917ED78e87cbAFA0bfC25CC2bd02657";
+const contractAddress = "0x86a940a5f9639ee731981b1372ECf0ABe8F15480";
+const toAddress = "0x23767b6B84D3B2664042FdA8c635A032c8dA3A27";
 
 const nftContract = new web3.eth.Contract(contract.abi, contractAddress);
 async function mintNFT(tokenURI) {
@@ -18,7 +19,7 @@ async function mintNFT(tokenURI) {
        'to': contractAddress,
        'nonce': nonce,
        'gas': 500000,
-       'data': nftContract.methods.CreateToken(PUBLIC_KEY, tokenURI).encodeABI()
+       'data': nftContract.methods.CreateToken(toAddress, tokenURI).encodeABI()
     };
     const signPromise = web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
     signPromise

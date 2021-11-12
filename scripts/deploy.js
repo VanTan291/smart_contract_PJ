@@ -1,6 +1,6 @@
 async function main() {
   const CreateNFT = await ethers.getContractFactory("MyToken");
-  const result = CreateNFT.deploy("Huy Nguyen coint", "HNC");
+  const result = CreateNFT.deploy("Huy Nguyen Test", "HNT1");
 
   return result;
 }
