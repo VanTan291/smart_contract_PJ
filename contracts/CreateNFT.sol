@@ -5,10 +5,12 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MyToken is ERC721URIStorage, Ownable {
- string domain="https://gateway.pinata.cloud/ipfs/QmdtKNxKjJyPQveSB2uM3yLsjZvrxfq5tZ19ftEVG7S2Gi";
+ string domain="http://nguyenbacthang.com";
  constructor(string memory name, string memory symbol) ERC721(name, symbol) {}
- function CreateToken(address to, uint256 tokenId) public onlyOwner {
+ function CreateToken(address to, uint256 tokenId) public onlyOwner returns (uint256) {
    _mint(to, tokenId);
    _setTokenURI(tokenId, domain);
+
+   return tokenId;
  }
 }
