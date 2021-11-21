@@ -6,7 +6,7 @@ require("@nomiclabs/hardhat-ethers");
 require("hardhat-abi-exporter");
 require("hardhat-watcher");
 
-const {API_URL, accounts} = process.env;
+const accounts = [process.env.PRIVATE_KEY]
 
 module.exports = {
   solidity: "0.8.3",
@@ -34,7 +34,7 @@ module.exports = {
       gasMultiplier: 2,
     },
     rinkeby: {
-      url: `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      url: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.INFURA_API_KEY}`,
       accounts,
       chainId: 4,
       live: true,
