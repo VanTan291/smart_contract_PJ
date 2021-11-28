@@ -5,6 +5,7 @@ require('dotenv').config();
 require("@nomiclabs/hardhat-ethers");
 require("hardhat-abi-exporter");
 require("hardhat-watcher");
+require('@openzeppelin/hardhat-upgrades');
 
 const accounts = [process.env.PRIVATE_KEY]
 
