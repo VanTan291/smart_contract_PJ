@@ -1,10 +1,10 @@
 async function main() {
   const CreateNFT = await ethers.getContractFactory("MyToken");
   console.log('Deploying...');
-  const box = await upgrades.deployProxy(Box, [42], { initializer: 'store' });
-  await box.deployed();
-  console.log('Deployed to:', box.address);
-  return box.address;
+  const createToken = await upgrades.deployProxy(CreateNFT, ["Test upgrades coint", "TUC"], { initializer: 'initialize' });
+  await createToken.deployed();
+  console.log('Deployed to:', createToken.address);
+  return createToken;
 }
 
 main()

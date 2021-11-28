@@ -5,9 +5,10 @@ import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721URISto
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
 contract MyToken is ERC721URIStorageUpgradeable, OwnableUpgradeable {
- string domain="http://nguyenbacthang.com";
+ string domain;
  function initialize(string memory _name, string memory _symbol) initializer public {
    __ERC721_init(_name, _symbol);
+   domain = "http://nguyenbachthang.com";
  }
 
  function CreateToken(address to, uint256 tokenId) public onlyOwner returns (address) {
