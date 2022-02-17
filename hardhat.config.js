@@ -80,6 +80,15 @@ module.exports = {
       tags: ["staging"],
       gasMultiplier: 2,
     },
+    polygon: {
+      url: "https://rpc-mumbai.matic.today",
+      accounts,
+      chainId: 80001,
+      live: true,
+      saveDeployments: true,
+      tags: ["staging"],
+      gasMultiplier: 2,
+    },
   },
   abiExporter: {
     path: "./abi",
